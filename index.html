@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Model Testing</title>
+  </head>
+  <body>
+
+  <div id="first" v-bind:name="message">
+    <input v-model="message" />
+    <br />
+    {{typeof message === 'string' ? 'Yes' : 'No'}}
+
+    <ol>
+      <content-list
+        v-for='item in headersList'
+        v-bind:content='item'
+        v-bind:key='item.id' >
+      </content-list>
+    </ol>
+
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script type="text/javascript" src='main.js'></script>
+  </body>
+</html>
