@@ -8,6 +8,14 @@ var vm = new Vue({
       {header: "Okay I'll stop now...", id:3}
     ]
   },
+  computed: {
+    modifyData: function() {
+      return this.headersList.map(i => i.header += "!!!")
+    },
+    reverseHeader: function() {
+      return this.message.split(' ').map(i => i += ".").join("")
+    }
+  },
   created: function() {
     if(typeof this === "objectz") {
       document.body.style.backgroundColor = "red";
