@@ -6,7 +6,8 @@ var vm = new Vue({
       {header: "READ ALL ABOUT IT", id: 1},
       {header: "STOOP KID SCARED TO LEAVE HIS STOOP", id:2},
       {header: "Okay I'll stop now...", id:3}
-    ]
+    ],
+    isActive: true
   },
   computed: {
     modifyData: function() {
@@ -14,6 +15,12 @@ var vm = new Vue({
     },
     reverseHeader: function() {
       return this.message.split(' ').map(i => i += ".").join("")
+    },
+  },
+  methods: {
+    turnFalse: function() {
+      console.log('heh')
+      this.isActive ? this.isActive = false : this.isActive = true
     }
   },
   created: function() {

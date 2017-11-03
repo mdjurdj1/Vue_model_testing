@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Vue Model Testing</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
 
-  <div id="first" v-bind:name="message">
+  <div id="first" v-bind:name="message" v-bind:class="{ active: isActive }">
     <input v-model="message" />
     <br />
     {{typeof message === 'string' ? 'Yes' : 'No'}}
@@ -14,6 +15,7 @@
     {{ modifyData }}
     <br />
     {{ reverseHeader }}
+    <button @click="turnFalse"> TURN IT FALSE! </button>
     <ol>
       <content-list
         v-for='item in headersList'
