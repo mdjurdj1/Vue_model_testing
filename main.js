@@ -7,6 +7,7 @@ var vm = new Vue({
       {header: "STOOP KID SCARED TO LEAVE HIS STOOP", id:2},
       {header: "Okay I'll stop now...", id:3}
     ],
+    password: "",
     isActive: true
   },
   computed: {

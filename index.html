@@ -16,6 +16,7 @@
     <br />
     {{ reverseHeader }}
     <button @click="turnFalse"> TURN IT FALSE! </button>
+    <input type="password" v-model="password" />
     <ol>
       <content-list
         v-for='item in headersList'
