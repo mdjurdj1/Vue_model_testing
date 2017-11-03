@@ -20,7 +20,6 @@ var vm = new Vue({
   },
   methods: {
     turnFalse: function() {
-      console.log('heh')
       this.isActive ? this.isActive = false : this.isActive = true
     }
   },
@@ -38,4 +37,21 @@ var vm = new Vue({
 Vue.component('content-list', {
   props: ['content'],
   template: '<li>{{content.header}}</li>'
+})
+
+Vue.component('password-input', {
+  template: `
+    <input
+      ref="input"
+      :value="value"
+      @input="updateValue($event.target.value)"
+     />
+  `,
+  props: ['value'],
+  methods: {
+    updateValue: function(value) {
+      var formattedValue = value.trim()
+      this.$emit('input', formattedValue)
+    }
+  }
 })
